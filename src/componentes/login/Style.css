@@ -1,0 +1,22 @@
+#div{
+    background-image: url(imagen1.jpg);
+    height: 100vh;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+#contenedorDeFormulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: rgba(6, 241, 241, 0.089);
+   border-radius: 10%;
+   width: 27%;
+   height: 53%;
+}
