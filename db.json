@@ -1,3 +1,11 @@
 {
-    "productos": []
+  "Usuario": [
+    {
+      "id": "5a88",
+      "Nombre": "steven",
+      "Apellido": "zuñga",
+      "Cedula": "363636363",
+      "Contrasena": "111111"
+    }
+  ]
 }

@@ -1,9 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import "../register/Style.css"
+import Llamados from "../../service/Llamados"
+import Swal from "sweetalert2";
+
 
 function Registro() {
 
+  const [Nombre,setNombre]=useState("")
+  const [Apellido,setApellido]=useState("")
+  const [Cedula,setCedula]=useState("")
+  const [Contrasena,setContrasena]=useState("")
+
+  function inputNombre(evento) {
+    setNombre(evento.target.value)
+  }
+
+  function inputApellido(evento) {
+    setApellido(evento.target.value)
+  }
+
+  function inputCedula(evento) {
+    setCedula(evento.target.value)
+  }
+  function inputContrasena(evento) {
+    setContrasena(evento.target.value)
+  }
+
+  function registrar() {
+
+    if (!Nombre.trim() || !Apellido.trim() ||  !Cedula.trim() || !Contrasena.trim() ) {
+      Swal.fire({
+        title: "ingrese los datos",
+        icon: "error",
+        draggable: true
+      });
+
+    } else {
+      Llamados.PostUser(Nombre,Apellido,Cedula,Contrasena)
+
+      Swal.fire({
+        title: "registro exitoso",
+        icon: "success",
+        draggable: true
+      });
+    }
+    
+
+    
+
+  }
 
 
 
@@ -19,7 +65,7 @@ function Registro() {
             <label htmlFor="">Contraseña</label>
             <input  value={Contrasena} onChange={inputContrasena} type="password" />
             <p>ya te registrste?<a href="">iniciar sesion</a></p>
-            <button>registrar</button>
+            <button onClick={registrar}>registrar</button>
 
 
         </div>

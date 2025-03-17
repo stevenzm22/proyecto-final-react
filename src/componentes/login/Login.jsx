@@ -1,21 +1,88 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../login/Style.css"
+import Swal from "sweetalert2";
+import Llamados from '../../service/Llamados';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
+
+  const [usuarios,setusuarios]=useState([])
+
+   const navigate= useNavigate()
+   
+    useEffect(() => {
+   
+        async  function recuperarDatos() {
+            const datos= await Llamados.GetUser()
+            console.log(datos);
+    
+            setusuarios(datos)
+        }
+     
+        recuperarDatos()
+    
+      }, []); 
+
+      const [Nombre,setNombre]=useState()
+      const [Apellido,setApellido]=useState()
+      const [Cedula,setCedula]=useState()
+      const [Contrasena,setContrasena]=useState()
+
+      function inputNombre(evento) {
+        setNombre(evento.target.value)
+      }
+    
+      function inputApellido(evento) {
+        setApellido(evento.target.value)
+      }
+    
+      function inputCedula(evento) {
+        setCedula(evento.target.value)
+      }
+      function inputContrasena(evento) {
+        setContrasena(evento.target.value)
+      }
+
+      function iniciar() {
+       
+        const encontrado = usuarios.filter(Usuario => Usuario.Nombre===Nombre && Usuario.Apellido=== Apellido && Usuario.Cedula===Cedula &&  Usuario.Contrasena===Contrasena)
+        console.log(encontrado.length);
+        
+     
+       if (encontrado.length === 0) {
+         Swal.fire({
+                 title: "usuario no encontrado",
+                 icon: "error",
+                 draggable: true
+               });
+       }else{
+     
+        navigate("/Home")
+         
+       }
+
+      }
+
+
+
+
+
+
   return (
     <div id='div'>
 
           <div id='contenedorDeFormulario'>
             <label htmlFor="">Nombre</label>
-            <input type="text" />
+            <input value={Nombre} onChange={inputNombre} type="text" />
             <label htmlFor="">Apellido</label>
-            <input type="text" />
+            <input value={Apellido} onChange={inputApellido} type="text" />
             <label htmlFor="">Cedula</label>
-            <input type="number" />
+            <input value={Cedula} onChange={inputCedula} type="number" />
             <label htmlFor="">Contraseña</label>
-            <input type="password" />
-            <p>ya te registrste?<a href="">iniciar sesion</a></p>
-            <button>registrar</button>
+            <input value={Contrasena} onChange={inputContrasena} type="password" />
+            <p>ya te registraste?<a href="">registrar</a></p>
+            <button onClick={iniciar}>iniciar sesion</button>
 
           </div>
     </div>
