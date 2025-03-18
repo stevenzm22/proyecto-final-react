@@ -56,6 +56,7 @@ function Registro() {
   return (
     <div id='contenedor'>
         <div id='contenedorDeFormulario'>
+          <h2>registro</h2>
             <label htmlFor="">Nombre</label>
             <input value={Nombre} onChange={inputNombre} type="text" />
             <label htmlFor="">Apellido</label>
@@ -64,7 +65,7 @@ function Registro() {
             <input  value={Cedula} onChange={inputCedula} type="number" />
             <label htmlFor="">Contraseña</label>
             <input  value={Contrasena} onChange={inputContrasena} type="password" />
-            <p>ya te registrste?<a href="">iniciar sesion</a></p>
+            <p>ya te registrste?<a href="/Login">iniciar sesion</a></p>
             <button onClick={registrar}>registrar</button>
 
 

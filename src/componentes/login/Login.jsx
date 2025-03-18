@@ -73,6 +73,7 @@ function Login() {
     <div id='div'>
 
           <div id='contenedorDeFormulario'>
+            <h2>inicio de sesion</h2>
             <label htmlFor="">Nombre</label>
             <input value={Nombre} onChange={inputNombre} type="text" />
             <label htmlFor="">Apellido</label>
@@ -81,7 +82,7 @@ function Login() {
             <input value={Cedula} onChange={inputCedula} type="number" />
             <label htmlFor="">Contraseña</label>
             <input value={Contrasena} onChange={inputContrasena} type="password" />
-            <p>ya te registraste?<a href="">registrar</a></p>
+            <p>ya te registraste?<a href="/Registro">registrar</a></p>
             <button onClick={iniciar}>iniciar sesion</button>
 
           </div>

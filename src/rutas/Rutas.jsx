@@ -11,6 +11,7 @@ import Login from '../componentes/login/Login';
 
 
 
+
 function Rutas() {
 
   return (
@@ -23,6 +24,7 @@ function Rutas() {
                     <Route path="Home" element={<Homes/>}/>
                     <Route path="Registro" element={<PagRegistro/>}/>
                     <Route path="Login" element={<Login/>}/>
+                    
                    
                       
                             

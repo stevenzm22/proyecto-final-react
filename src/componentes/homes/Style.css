@@ -1,0 +1,92 @@
+
+
+
+
+#letra{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Contenedores2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    
+}
+
+#divImagen{
+    background-image: url(salchipapas.jpg);
+  
+    height: 100vh;
+background-repeat: no-repeat;
+background-size: cover;
+    
+}
+
+#contenedorhp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    gap: 10px;
+    
+}
+
+#titulo2{
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+text-align: center;
+
+}
+
+#parraffo{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* el segundo contenedor */
+
+#Contenedores3{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+
+}
+
+#titulo3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+text-align: center;
+}
+
+#divImagen1{
+
+    background-image: url(salchipapas.jpg);
+  
+    height: 100vh;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+#contenedorHP{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    gap: 10px;
+}
+
+.btn{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 75px;
+    height: 40px;
+    border: solid 2px #0e0d0d;
+}
+
+
+
+

@@ -1,4 +1,22 @@
+#navar {
+    list-style: none; 
+    padding: 0;
+    display: flex;   
+    align-items: center;
+    gap: 15%;       
+    background-color: rgb(15, 15, 41);
+}
 
+.li {
+    display: flex;
+    align-items: center;
+}
+
+#img {
+    margin: 5px;
+    width: 45px;
+    height: 50px;
+}
 
 
 
