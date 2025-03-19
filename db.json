@@ -7,5 +7,28 @@
       "Cedula": "363636363",
       "Contrasena": "111111"
     }
+  ],
+  "producto": [
+    {
+      "id": "f307",
+      "productos": "pinolillo",
+      "descripcion": "sobre grande de 500 gramos",
+      "precio": "$555",
+      "Tamano": "pequeño"
+    },
+    {
+      "id": "ff3b",
+      "productos": "pollo frito",
+      "descripcion": "pollo sabroso de pollolandia",
+      "precio": "$12 k",
+      "Tamano": "pequeño"
+    },
+    {
+      "id": "6569",
+      "productos": "frijoles ",
+      "descripcion": "ijhuijhjn",
+      "precio": "$7890",
+      "Tamano": "mediano"
+    }
   ]
 }

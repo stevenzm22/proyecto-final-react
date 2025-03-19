@@ -19,6 +19,8 @@ function Footer() {
         <h2> Horario</h2>
         <h5><i className="bi bi-calendar-date"></i> lunes a viernes </h5>
         <p>6am a 12 pm</p>
+        <h5><i className="bi bi-calendar-date"></i>sabdos y domingos</h5>
+        <p>10 am a 12pm</p>
        </div>
 
        <div className='div'>

@@ -1,10 +1,10 @@
 import React from 'react'
 import "../homes/Style.css"
 
-import papasFritas from "../homes/papasFritas.jpg"
-import salchipapas from "../homes/salchipapas.jpg"
-import salchipapicarne from "../homes/salchipapicarne.jpg"
-import patacones from "../homes/patacones.jpg"
+/*  import papasFritas from "../homes/papasFritas.jpg"
+  import salchipapas from "../homes/salchipapas.jpg"
+  import salchipapicarne from "../homes/salchipapicarne.jpg"
+  import patacones from "../homes/patacones.jpg" */
 
 
 
@@ -19,7 +19,6 @@ function Home() {
     
     <div id='body'>
 
-      <div>{/*aqui iran las busquedas */}</div>
 
       <section>
         <p id='letra'><strong>Soda Zuñiga</strong> es el lugar perfecto para los amantes de la comida rápida y
