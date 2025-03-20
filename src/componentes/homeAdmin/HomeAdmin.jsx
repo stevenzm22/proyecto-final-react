@@ -4,8 +4,11 @@ import "../homeAdmin/Style.css"
 import Swal from "sweetalert2";
 
 import LlamadosProductos from '../../service/LlamadosProductos'
+import { useNavigate } from 'react-router-dom';
 
 function HomeAdmin() {
+
+    const navigate=useNavigate()
     
 
 const [Productos,setProductos]=useState("")
@@ -13,6 +16,7 @@ const [Descripcion,setDescripcion]=useState("")
 const [Precio,setPrecio]=useState("")
 const [Tamano,setTamano]=useState("")
 const [usuarioProductos,setusuarioProductos]=useState([])
+const [Img,setImg]=useState()
 
 useEffect(() => {
    
@@ -47,6 +51,8 @@ function selectTamano(evento) {
     setTamano(evento.target.value)
     
 }
+
+
 function enviarProductos() {
     if (!Productos.trim() || !Descripcion.trim() ||  !Precio.trim() || Tamano === "") {
         Swal.fire({
@@ -56,7 +62,7 @@ function enviarProductos() {
         });
   
       } else {
-        LlamadosProductos.PostProductos(Productos,Descripcion,Precio,Tamano)
+        LlamadosProductos.PostProductos(Productos,Descripcion,Precio,Tamano,Img)
   
         Swal.fire({
           title: "registro exitoso",
@@ -64,19 +70,61 @@ function enviarProductos() {
           draggable: true 
         });
       }
-      location.reload()
+    //  location.reload()
   
-    
 }
 
-const inputNombre=(evento)=> {
+//aqui se guardan las imagenes 
 
-    const datos=new FileReader()
+const inputImagen= (e)=>{
+    //console.log(e.target.files);
+const guardarImagen= new FileReader()
+guardarImagen.addEventListener("load",()=>{
+    setImg(guardarImagen.result)
+
+})
+guardarImagen.readAsDataURL(e.target.files[0])
+
+
 }
+
+
+function atras() {
+ 
+    navigate("/Home")
+}
+
+
+
 
 
 
   return (
+<div>
+
+     <div id='contenedorr'>
+        
+        <nav>
+    
+          <ul id='Navar'>
+            <li></li>
+            <li  className='Li'><a href="/Home">inicio</a></li>
+            <li  className='Li'><a href="">menú</a></li>
+          
+        
+            <li>
+          
+                <button onClick={atras} className="button">
+                <span className="button-content">Atras</span>
+                </button>
+
+            </li>
+            
+          </ul>
+    
+        </nav>
+    
+        </div>
 
     <div id='contenedorM'>
          <div id='contform'>
@@ -90,7 +138,7 @@ const inputNombre=(evento)=> {
             <input value={Precio} onChange={inputPrecio} type="text"placeholder='precio' />
 
             <label htmlFor="">archivo o imagen</label>
-            <input onChange={inputImagen} type="file" />
+            <input type="file" onChange={inputImagen} />
 
             <label htmlFor="">tamaño</label>
             <select value={Tamano} onChange={selectTamano} name="" id="" > 
@@ -102,32 +150,34 @@ const inputNombre=(evento)=> {
 
         </div>
 
-        <div id='contenedor2'>
-  <table id='tabla'>
+<div id='contenedor2'>
+    <table id='tabla'>
     <thead>
-      <tr>
-        <th>Imagen</th>
-        <th>Producto</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-        <th>Tamaño</th>
-      </tr>
-    </thead>
-    <tbody>
-      {usuarioProductos.map((producto, index) => (
+        <tr>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Tamaño</th>
+        </tr> 
+        </thead>    
+        <tbody>
+            {usuarioProductos.map((producto, index) => (
         <tr key={index}>
-          <td>
-            <img src={producto.imagen} alt={producto.producto} />
-          </td>
-          <td>{producto.productos}</td>
-          <td>{producto.descripcion}</td>
-          <td>{producto.precio}</td>
-          <td>{producto.Tamano}</td>
+            <td>
+                <img src={producto.imagenB64} alt={producto.producto} className='imagenesM' />
+            </td>
+            <td>{producto.productos}</td>
+            <td>{producto.descripcion}</td>
+            <td>{producto.precio}</td>
+            <td>{producto.Tamano}</td>
         </tr>
-      ))}
+            ))}
     </tbody>
-  </table>
+    </table>
 </div>
+
+    </div>
 
     </div>
   )
