@@ -85,13 +85,12 @@ guardarImagen.addEventListener("load",()=>{
 })
 guardarImagen.readAsDataURL(e.target.files[0])
 
-
 }
 
 
 function atras() {
  
-    navigate("/Home")
+    navigate("/")
 }
 
 
@@ -108,8 +107,8 @@ function atras() {
     
           <ul id='Navar'>
             <li></li>
-            <li  className='Li'><a href="/Home">inicio</a></li>
-            <li  className='Li'><a href="">menú</a></li>
+            <li  className='Li'><a href="/">inicio</a></li>
+            <li  className='Li'><a href="/Menu">menú</a></li>
           
         
             <li>

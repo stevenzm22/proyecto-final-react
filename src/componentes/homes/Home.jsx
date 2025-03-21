@@ -1,5 +1,6 @@
 import React from 'react'
 import "../homes/Style.css"
+import { useNavigate } from 'react-router-dom'
 
 /*  import papasFritas from "../homes/papasFritas.jpg"
   import salchipapas from "../homes/salchipapas.jpg"
@@ -7,11 +8,16 @@ import "../homes/Style.css"
   import patacones from "../homes/patacones.jpg" */
 
 
-
-
 function Home() {
 
+  const navigate=useNavigate()
+
   
+function menu () {
+  navigate("/Menu")
+}
+
+
 
 
   return (
@@ -41,7 +47,7 @@ function Home() {
         encontrarás hamburguesas irresistibles, crujientes salchipapas, hot dogs, nuggets y muchas más 
         opciones deliciosas. Todo preparado al momento con ingredientes de calidad.
         </p>
-        <button className='btn'>Menú</button>
+        <button onClick={menu} className='btn'>Menú</button>
 
       </div>
 

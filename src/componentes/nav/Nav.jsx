@@ -19,8 +19,8 @@ function Nav() {
 
       <ul id='navar'>
         <li className='li'><img id='img' src={icono} alt="" /></li>
-        <li  className='li'><a href="/Home">inicio</a></li>
-        <li  className='li'><a href="">menú</a></li>
+        <li  className='li'><a href="/">inicio</a></li>
+        <li  className='li'><a href="/Menu">menú</a></li>
         <li  className='li'><a href="/Login">login</a></li>
         <li className='li'> <a href="">Promociones</a></li>
         
