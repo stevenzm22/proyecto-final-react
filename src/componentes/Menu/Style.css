@@ -21,8 +21,10 @@
     align-items: center;  
     border-radius: 10px;
     font-size: 20px;
-  gap: 20px;
+  gap: 7px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+  
 }
 
 
@@ -38,6 +40,7 @@
   color: #fff;
   border: none;
   cursor: pointer;
+  
 }
 
 .buttonA:hover::before {

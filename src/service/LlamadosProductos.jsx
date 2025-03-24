@@ -42,12 +42,12 @@ async function PostProductos(productos,descripcion,precio,Tamano,imagenB64) {
 }
 
     
-    async function UpdateProductos(productos,descripcion,precio,Tamano,imagenB64, id) {
+    async function UpdateProductos(productos,descripcion,precio,id) {
     try {
-        const userData = {productos,descripcion,precio,Tamano,imagenB64,id };
+        const userData = {productos,descripcion,precio,id };
 
         const response = await fetch(`http://localhost:3000/producto/${id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },

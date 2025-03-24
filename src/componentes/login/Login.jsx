@@ -58,7 +58,7 @@ function Login() {
                });
        }else{
      
-        navigate("/Home")
+        navigate("/")
          
        }
 

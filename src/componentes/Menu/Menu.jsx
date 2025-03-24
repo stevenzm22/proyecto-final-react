@@ -46,16 +46,19 @@ function Menu() {
   {MostarProductos.map((producto, index) => (
 
     <div className='menuIMG'>
+     
       <img src={producto.imagenB64} alt={producto.producto} className='imagenesM' />
-
+    
       <section id='sectionMenu'>
 
         <p>{producto.descripcion}</p>
+        </section>
+        
         <button className="buttonA">
           <span className="button-contentA">comprar</span>
         </button>
 
-      </section>
+     
     </div>  
   ))}
 </div>

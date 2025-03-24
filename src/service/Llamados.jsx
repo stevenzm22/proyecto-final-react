@@ -20,7 +20,13 @@ async function GetUser() {
 
 async function PostUser(Nombre,Apellido,Cedula,Contrasena) {
     try {
-        const userData = {Nombre,Apellido,Cedula,Contrasena};
+        const userData =
+         {Nombre,
+            Apellido,
+            Cedula,
+            Contrasena,
+            rol:"cliente"
+        };
 
         const response = await fetch("http://localhost:3000/Usuario", {
             method: 'POST',

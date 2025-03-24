@@ -1,0 +1,15 @@
+#navaR {
+    list-style: none; 
+    padding: 0;
+    display: flex;   
+    align-items: center;
+    gap: 19%;       
+    background-color: rgb(15, 15, 41);
+    height: 50px;
+    justify-content: center;
+}
+
+.Li {
+    display: flex;
+    align-items: center;
+}

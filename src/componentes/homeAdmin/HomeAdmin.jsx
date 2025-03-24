@@ -17,6 +17,7 @@ const [Precio,setPrecio]=useState("")
 const [Tamano,setTamano]=useState("")
 const [usuarioProductos,setusuarioProductos]=useState([])
 const [Img,setImg]=useState()
+const [valor,setValor]=useState([])
 
 useEffect(() => {
    
@@ -69,6 +70,7 @@ function enviarProductos() {
           icon: "success",
           draggable: true 
         });
+       
       }
     //  location.reload()
   
@@ -90,11 +92,61 @@ guardarImagen.readAsDataURL(e.target.files[0])
 
 function atras() {
  
-    navigate("/")
+    navigate("/HomeAdmin")
 }
 
 
+async function Editar(id) {
+    const { value: formValues } = await Swal.fire({
+        title: "Editar Producto",
+        html: `
+          <input id="swal-input1" placeholder="producto" class="swal2-input">
+          <input id="swal-input2" placeholder="descripcion" class="swal2-input">
+          <input id="swal-input3" placeholder="precio" class="swal2-input">
+         
+        `,
+        focusConfirm: false,
+        preConfirm: () => {
+          return [
+            document.getElementById("swal-input1").value,
+            document.getElementById("swal-input2").value,
+            document.getElementById("swal-input3").value
+          ];
+        }
+      });
+      console.log(formValues[0]);
+      
+      if (formValues) {
+        LlamadosProductos.UpdateProductos(formValues[0],formValues[1],formValues[2], id )
 
+        Swal.fire(JSON.stringify(formValues));
+
+      }
+}
+
+function Eliminar(id) {
+    Swal.fire({
+        title: "¿seguro lo desea eliminar?",
+        
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "si, eliminar!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            LlamadosProductos.DeleteProductos(id)
+          Swal.fire({
+            title: "eliminado!",
+            text: "eliminado correctamente.",
+            icon: "success"
+          });
+        }
+        window.location.reload();
+      });
+
+    
+}
 
 
 
@@ -158,6 +210,8 @@ function atras() {
             <th>Descripción</th>
             <th>Precio</th>
             <th>Tamaño</th>
+            <th>editar</th>
+            <th>eliminar</th>
         </tr> 
         </thead>    
         <tbody>
@@ -170,6 +224,9 @@ function atras() {
             <td>{producto.descripcion}</td>
             <td>{producto.precio}</td>
             <td>{producto.Tamano}</td>
+            <td><button onClick={e=>Editar(producto.id)}>Editar</button></td>
+            <td><button onClick={e=>Eliminar(producto.id)}>Eliminar</button></td>
+
         </tr>
             ))}
     </tbody>
