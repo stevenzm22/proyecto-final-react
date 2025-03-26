@@ -47,12 +47,12 @@ async function PostUser(Nombre,Apellido,Cedula,Contrasena) {
     }
 }
 
-async function UpdateUser(Nombre,Apellido,Cedula,Contrasena, id) {
+async function UpdateUser(rol, id) {
     try {
-        const userData = {Nombre,Apellido,Cedula,Contrasena,id };
+        const userData = {rol,id };
 
         const response = await fetch(`http://localhost:3000/Usuario/${id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },

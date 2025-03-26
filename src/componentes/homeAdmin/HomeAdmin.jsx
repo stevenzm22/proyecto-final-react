@@ -54,7 +54,7 @@ function selectTamano(evento) {
 }
 
 
-function enviarProductos() {
+ function enviarProductos() {
     if (!Productos.trim() || !Descripcion.trim() ||  !Precio.trim() || Tamano === "") {
         Swal.fire({
           title: "ingrese los datos",
@@ -63,14 +63,15 @@ function enviarProductos() {
         });
   
       } else {
-        LlamadosProductos.PostProductos(Productos,Descripcion,Precio,Tamano,Img)
-  
+       LlamadosProductos.PostProductos(Productos,Descripcion,Precio,Tamano,Img)
+        
         Swal.fire({
           title: "registro exitoso",
           icon: "success",
           draggable: true 
         });
        
+      
       }
     //  location.reload()
   

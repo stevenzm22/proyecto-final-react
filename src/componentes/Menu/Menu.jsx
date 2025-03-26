@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Menu() {
 
+  
+
 
   const navigate=useNavigate()
   const [MostarProductos,setMostarProductos]=useState([])
@@ -30,8 +32,16 @@ function Menu() {
 
 
 
+function compras() {
+navigate()
+  
+}
+
+
+
 
   return (
+
     <div>
         <section>
           <h1>Menú</h1>
@@ -54,7 +64,7 @@ function Menu() {
         <p>{producto.descripcion}</p>
         </section>
         
-        <button className="buttonA">
+        <button onClick={compras} className="buttonA">
           <span className="button-contentA">comprar</span>
         </button>
 
