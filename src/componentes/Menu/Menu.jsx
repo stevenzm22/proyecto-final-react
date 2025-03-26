@@ -33,7 +33,7 @@ function Menu() {
 
 
 function compras() {
-navigate()
+navigate("/compras")
   
 }
 

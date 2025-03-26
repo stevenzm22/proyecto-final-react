@@ -41,23 +41,38 @@
     height: 80px;
   }
 
-  #Navar {
-    list-style: none; 
-    padding: 0;
-    display: flex;   
-    align-items: center;
-    gap: 35%;       
-    background-color: rgb(6, 23, 59);
-    height: 70px;
-  
-    justify-content: flex-end;
-}
-
-.Li {
+  #navart {
+    list-style: none;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-   
+    justify-content: space-around;
+    background-color: rgb(15, 15, 41);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
 }
+
+.lit {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.lit a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.lit a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+
 
 #tabla th{
   background-color: rgb(30, 4, 71);
@@ -73,7 +88,7 @@
 .button {
   position: relative;
   overflow: hidden;
-  height: 3rem;
+  height: 2rem;
   padding: 0 2rem;
   border-radius: 1.5rem;
   background: #3d3a4e;

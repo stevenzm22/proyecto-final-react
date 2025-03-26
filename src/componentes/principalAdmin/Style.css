@@ -1,15 +1,39 @@
-#navaR {
-    list-style: none; 
-    padding: 0;
-    display: flex;   
-    align-items: center;
-    gap: 19%;       
-    background-color: rgb(15, 15, 41);
-    height: 50px;
-    justify-content: center;
-}
-
-.Li {
+#navarr {
+    list-style: none;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    background-color: rgb(15, 15, 41);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
 }
+
+.lii {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.lii a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.lii a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+#boton{
+    border-radius: 10px;
+    width: 130%;
+    background-color: black;
+    color: white;
+}
+
+

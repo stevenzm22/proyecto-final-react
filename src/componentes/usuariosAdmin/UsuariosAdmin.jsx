@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import Llamados from '../../service/Llamados';
 import Swal from "sweetalert2";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -9,6 +10,7 @@ function UsuariosAdmin() {
 
     const [usuarios,setusuarios]=useState([])
 
+    const navigate=useNavigate()
   
     
      useEffect(() => {
@@ -74,12 +76,18 @@ function Eliminar(id) {
     }
 
 
+    function salir() {
+      navigate("/HomeAdmin")
+      
+    }
+
+
   return (
     <div>
 
     <div>
 
-        <button>atras</button>
+        <button onClick={salir}>atras</button>
 
     </div>
 <br />

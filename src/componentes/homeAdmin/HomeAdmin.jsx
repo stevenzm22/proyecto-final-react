@@ -158,10 +158,10 @@ function Eliminar(id) {
         
         <nav>
     
-          <ul id='Navar'>
+          <ul id='navart'>
             <li></li>
-            <li  className='Li'><a href="/">inicio</a></li>
-            <li  className='Li'><a href="/Menu">menú</a></li>
+            <li  className='lit'><a href="/HomeAdmin">inicio</a></li>
+            <li  className='lit'><a href="/Menu">menú</a></li>
           
         
             <li>
