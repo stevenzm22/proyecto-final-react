@@ -211,8 +211,8 @@ function Eliminar(id) {
             <th>Descripción</th>
             <th>Precio</th>
             <th>Tamaño</th>
-            <th>editar</th>
-            <th>eliminar</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr> 
         </thead>    
         <tbody>
@@ -225,8 +225,8 @@ function Eliminar(id) {
             <td>{producto.descripcion}</td>
             <td>{producto.precio}</td>
             <td>{producto.Tamano}</td>
-            <td><button onClick={e=>Editar(producto.id)}>Editar</button></td>
-            <td><button onClick={e=>Eliminar(producto.id)}>Eliminar</button></td>
+            <td><button onClick={e=>Editar(producto.id)} className='buton'>Editar</button></td>
+            <td><button onClick={e=>Eliminar(producto.id)} className='buton'>Eliminar</button></td>
 
         </tr>
             ))}

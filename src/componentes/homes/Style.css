@@ -18,7 +18,7 @@ body {
 
 /* Imagen de fondo */
 #divImagen, #divImagen1 {
-    background-image: url(salchipapas.jpg);
+    background-image: url(hamburguesa.webp);
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -77,6 +77,13 @@ body {
     transform: scale(1.05);
 }
 
-
+#divImagen1 {
+    background-image: url(salchipapas.webp);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
 
 

@@ -10,6 +10,7 @@ import PagMenu from '../pages/PagMenu';
 import HomeAdmin from '../pages/HomeAdmin';
 import UsuariosMostrado from '../pages/usuariosMostrado';
 import ComprasPAG from '../pages/ComprasPAG';
+import PagInformacion from '../pages/PagInformacion';
 
 
 
@@ -32,6 +33,8 @@ function Rutas() {
                     <Route path="HomeAdmin" element={<HomeAdmin/>}/>
                     <Route path="usuarios" element={<UsuariosMostrado/>}/>
                     <Route path="compras" element={<ComprasPAG/>}/>
+                    <Route path="info" element={<PagInformacion/>}/>
+                  
                   
                     
                     

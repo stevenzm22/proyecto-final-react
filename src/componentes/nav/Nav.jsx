@@ -22,7 +22,7 @@ function Nav() {
         <li  className='li'><a href="/">inicio</a></li>
         <li  className='li'><a href="/Menu">menú</a></li>
         <li  className='li'><a href="/Login">login</a></li>
-        <li className='li'> <a href="">Promociones</a></li>
+        <li className='li'> <a href="/info">Sobre nosotros</a></li>
         
       </ul>
 

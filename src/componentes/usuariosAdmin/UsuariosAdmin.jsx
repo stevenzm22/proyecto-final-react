@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import "../usuariosAdmin/Style.css"
 
 import Llamados from '../../service/Llamados';
 import Swal from "sweetalert2";
@@ -83,7 +84,7 @@ function Eliminar(id) {
 
 
   return (
-    <div>
+    <div id='divUsuario'>
 
     <div>
 
@@ -91,6 +92,8 @@ function Eliminar(id) {
 
     </div>
 <br />
+  <h1 id='usuarioTiulo'>Editar Usuarios</h1>
+  <br />
     <table id='tabla'>
 
         <thead>
