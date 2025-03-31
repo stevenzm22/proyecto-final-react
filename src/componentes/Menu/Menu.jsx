@@ -38,8 +38,6 @@ navigate("/compras")
 }
 
 
-
-
   return (
 
     <div>
@@ -75,15 +73,6 @@ navigate("/compras")
 
        
 
-       
-       
-         
-       
-
-
-       
-
-       
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import "../homes/Style.css"
 import { useNavigate } from 'react-router-dom'
+import icono from "../nav/icono.png"
 
 
 
@@ -33,6 +34,7 @@ function saber() {
 
       <div id='contenedorhp'>
 
+        <img src={icono} alt="" className='imagenHome'  />
         <h2 id='titulo2'>Nuestras comidas</h2>
         <p id='parraffo'>
         Somos expertos en comida rápida, perfecta para satisfacer cualquier antojo. En nuestro menú 
@@ -49,6 +51,7 @@ function saber() {
       <div id='Contenedores3'>
 
 <div id='contenedorHP'>
+<img src={icono} alt="" className='imagenHome' />
 
   <h2 id='titulo3'>Saber mas</h2>
     <p id='parraffo'>

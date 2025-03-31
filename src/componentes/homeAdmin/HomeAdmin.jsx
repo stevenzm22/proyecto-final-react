@@ -4,7 +4,7 @@ import "../homeAdmin/Style.css"
 import Swal from "sweetalert2";
 
 import LlamadosProductos from '../../service/LlamadosProductos'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function HomeAdmin() {
 
@@ -54,7 +54,7 @@ function selectTamano(evento) {
 }
 
 
- function enviarProductos() {
+ async function enviarProductos() {
     if (!Productos.trim() || !Descripcion.trim() ||  !Precio.trim() || Tamano === "") {
         Swal.fire({
           title: "ingrese los datos",
@@ -63,7 +63,10 @@ function selectTamano(evento) {
         });
   
       } else {
-       LlamadosProductos.PostProductos(Productos,Descripcion,Precio,Tamano,Img)
+    
+       
+      const nuevosValores= await LlamadosProductos.PostProductos(Productos,Descripcion,Precio,Tamano,Img)
+       setusuarioProductos([...usuarioProductos,nuevosValores])
         
         Swal.fire({
           title: "registro exitoso",
@@ -73,8 +76,8 @@ function selectTamano(evento) {
        
       
       }
-    //  location.reload()
-  
+   
+      
 }
 
 //aqui se guardan las imagenes 
@@ -98,12 +101,14 @@ function atras() {
 
 
 async function Editar(id) {
+    const datosNuevos= await LlamadosProductos.GetProducto(id)
+    console.log(datosNuevos);
     const { value: formValues } = await Swal.fire({
         title: "Editar Producto",
         html: `
-          <input id="swal-input1" placeholder="producto" class="swal2-input">
-          <input id="swal-input2" placeholder="descripcion" class="swal2-input">
-          <input id="swal-input3" placeholder="precio" class="swal2-input">
+          <input id="swal-input1" value="${datosNuevos.productos}" class="swal2-input">
+          <input id="swal-input2" value="${datosNuevos.descripcion}" class="swal2-input">
+          <input id="swal-input3"value="${datosNuevos.precio}" class="swal2-input">
          
         `,
         focusConfirm: false,
@@ -119,34 +124,45 @@ async function Editar(id) {
       
       if (formValues) {
         LlamadosProductos.UpdateProductos(formValues[0],formValues[1],formValues[2], id )
-
+        const datos= await LlamadosProductos.GetProductos()
+        setusuarioProductos(datos)
         Swal.fire(JSON.stringify(formValues));
 
       }
 }
 
-function Eliminar(id) {
-    Swal.fire({
-        title: "¿seguro lo desea eliminar?",
-        
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "si, eliminar!"
-      }).then((result) => {
-        if (result.isConfirmed) {
-            LlamadosProductos.DeleteProductos(id)
-          Swal.fire({
-            title: "eliminado!",
-            text: "eliminado correctamente.",
-            icon: "success"
-          });
-        }
-        window.location.reload();
-      });
+async function Eliminar(id) {
+  const result = await Swal.fire({
+      title: "¿Seguro que desea eliminar?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, eliminar!"
+  });
 
-    
+  if (result.isConfirmed) {
+    const datosEliminados= await LlamadosProductos.DeleteProductos(id); 
+   
+      await Swal.fire({
+          title: "¡Eliminado!",
+          text: "Eliminado correctamente.",
+          icon: "success"
+          
+      });
+      location.reload();
+     
+     
+  }
+}
+
+function vaciarCampos() {
+    setProductos("")
+    setDescripcion("")
+    setPrecio("")
+    setTamano("")
+    setImg("")
+  
 }
 
 
@@ -160,8 +176,8 @@ function Eliminar(id) {
     
           <ul id='navart'>
             <li></li>
-            <li  className='lit'><a href="/HomeAdmin">inicio</a></li>
-            <li  className='lit'><a href="/Menu">menú</a></li>
+            <li  className='lit'><Link to="/HomeAdmin">Home</Link></li>
+            <li  className='lit'><Link to="/Menu">Menu</Link></li>
           
         
             <li>

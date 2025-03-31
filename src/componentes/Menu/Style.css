@@ -13,7 +13,8 @@
 
 
 
-#contenedorMenu {
+
+ #contenedorMenu {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 50px;
@@ -90,10 +91,10 @@
   transition: all 0.475s;
 }
 
-#sectionMenu{
+ #sectionMenu{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   text-align: center;
-}
+} 

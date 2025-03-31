@@ -11,6 +11,7 @@ import HomeAdmin from '../pages/HomeAdmin';
 import UsuariosMostrado from '../pages/usuariosMostrado';
 import ComprasPAG from '../pages/ComprasPAG';
 import PagInformacion from '../pages/PagInformacion';
+import RutasPrivadas from '../componentes/privadas/RutasPrivadas';
 
 
 
@@ -28,10 +29,15 @@ function Rutas() {
                     <Route path="/" element={<Homes/>}/>
                     <Route path="Registro" element={<PagRegistro/>}/>
                     <Route path="Login" element={<Login/>}/>
-                    <Route path="admin" element={<HomePinc/>}/>
+
+                    <Route path="admin" element={<RutasPrivadas element={<HomePinc/>}/>}/>
+
                     <Route path="Menu" element={<PagMenu/>}/>
-                    <Route path="HomeAdmin" element={<HomeAdmin/>}/>
-                    <Route path="usuarios" element={<UsuariosMostrado/>}/>
+
+                    <Route path="HomeAdmin" element={<RutasPrivadas element={<HomeAdmin/>}/>}/>
+
+                    <Route path="usuarios" element={<RutasPrivadas element={<UsuariosMostrado/>}/>}/>
+                    
                     <Route path="compras" element={<ComprasPAG/>}/>
                     <Route path="info" element={<PagInformacion/>}/>
                   

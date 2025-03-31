@@ -3,6 +3,7 @@ import icono from "../nav/icono.png"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../nav/Style.css"
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,10 +20,10 @@ function Nav() {
 
       <ul id='navar'>
         <li className='li'><img id='img' src={icono} alt="" /></li>
-        <li  className='li'><a href="/">inicio</a></li>
-        <li  className='li'><a href="/Menu">menú</a></li>
-        <li  className='li'><a href="/Login">login</a></li>
-        <li className='li'> <a href="/info">Sobre nosotros</a></li>
+        <li  className='li'><Link to="/">Inicio</Link></li>
+        <li  className='li'><Link to="/Menu">Menu</Link></li> 
+        <li  className='li'><Link to="/Login">Login</Link></li>
+        <li className='li'> <Link to="/info">Saber Mas</Link></li>
         
       </ul>
 

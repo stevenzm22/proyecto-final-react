@@ -18,6 +18,26 @@ async function GetProductos() {
     }
 }
 
+async function GetProducto(id) {
+    try {
+        const response = await fetch('http://localhost:3000/producto/'+id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error fetching users');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        throw error;
+    }
+}
+
 async function PostProductos(productos,descripcion,precio,Tamano,imagenB64) {
     try {
         const userData = {productos,descripcion,precio,Tamano,imagenB64};
@@ -78,7 +98,7 @@ async function DeleteProductos(id) {
             throw new Error(`Error deleting user with id ${id}`);
         }
 
-        return { message: `User with id ${id} deleted successfully` };
+        return await response.json();
     } catch (error) {
         console.error('Error deleting user:', error);
         throw error;
@@ -86,4 +106,4 @@ async function DeleteProductos(id) {
 }
 
 
-export default { GetProductos, PostProductos, UpdateProductos, DeleteProductos};
+export default { GetProductos, PostProductos, UpdateProductos, DeleteProductos, GetProducto };

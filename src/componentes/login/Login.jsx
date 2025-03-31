@@ -47,20 +47,23 @@ function Login() {
       function iniciar() {
        
         const encontrado = usuarios.filter(Usuario => Usuario.Nombre===Nombre && Usuario.Apellido=== Apellido && Usuario.Cedula===Cedula &&  Usuario.Contrasena===Contrasena)
-        console.log(encontrado.length);
-        
+      
+      
      
-       if (encontrado.length === 0) {
+
+
+      if (encontrado.length === 0) {
          Swal.fire({
                  title: "usuario no encontrado",
                  icon: "error",
                  draggable: true
                });
        }else{
-     
+        localStorage.setItem("llave", "usuario registrado")
         navigate("/")
+        
          
-       }
+       } 
 
       }
 
