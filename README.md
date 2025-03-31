@@ -10,3 +10,10 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
+    esta pagina se basa en comidas rapidas  consta de varios apartados de informacion y un apartado para el menu 
+para el administrador hay un apartado para guardar el inventario por ejemplo los productos 
+esta pagina esta enfocada para hacer crecer los negocios que estan empesando de cero y poder llevar un orden en sus inventarios .
